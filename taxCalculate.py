@@ -2,7 +2,6 @@ import datetime
 
 # for married couple
 
-
 def taxForMarried(yearlyIncome):
     taxAmount = 0
     # for less than 4 lakhs

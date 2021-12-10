@@ -4,6 +4,9 @@ import datetime
 def outputResult(
     yourname, gender, address, dob, contact, email, isMarried, monthlyIncome, taxAmount
 ):
+    with open('taxCalculate.txt','w') as f:
+        f.write("Yourname: {}\nSex: {}\nAddress: {}\nDOB: {}\nContact Number: {}\nEmail: {}\nMonthly Income: {}\nAnnualy Income: {}\nMarital Status: {}\nTaxable Amount: {}\nNet Income Annually: {}\n======END OF USER======\n".format(yourname, gender, address, dob, contact, email, monthlyIncome, monthlyIncome*12, isMarried, taxAmount, ((monthlyIncome*12)-taxAmount)))
+
     print(
         """
 Customer Name:""",
