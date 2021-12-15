@@ -1,0 +1,36 @@
+Yourname: mnsh
+Sex: f
+Address: asdfg
+DOB: dsftf-ds
+Contact Number: 92
+Email: asdfg
+Monthly Income: 20000
+Annualy Income: 240000
+Marital Status: n
+Taxable Amount: 2400.0
+Net Income Annually: 237600.0
+======END OF USER======
+Yourname: test1
+Sex: f
+Address: asdfg
+DOB: aesd
+Contact Number: 585
+Email: adsfg
+Monthly Income: 189000
+Annualy Income: 2268000
+Marital Status: y
+Taxable Amount: 525980.0
+Net Income Annually: 1742020.0
+======END OF USER======
+Yourname: test2
+Sex: m
+Address: dsfg
+DOB: aer
+Contact Number: 425
+Email: asesrt
+Monthly Income: 452
+Annualy Income: 5424
+Marital Status: n
+Taxable Amount: 54.24
+Net Income Annually: 5369.76
+======END OF USER======
