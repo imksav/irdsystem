@@ -1,4 +1,4 @@
-def footer():
+def getFooter():
           print(
           '''
           Thank you for visiting our system.
@@ -6,4 +6,4 @@ def footer():
 )
 
 if __name__ == '__main__':
-          footer()
+          getFooter()
