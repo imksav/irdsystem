@@ -27,4 +27,4 @@ def compareDiscount(discountDiplomat, discountDisability, discountGender):
 
 
 if __name__ == "__main__":
-          print(calculateDiscountRate("M", "N", "N"))
+          # print(calculateDiscountRate("M", "N", "N"))

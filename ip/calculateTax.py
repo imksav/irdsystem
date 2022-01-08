@@ -1,4 +1,4 @@
-# for married couple
+# function for marital case
 def taxForMaritalStatus(yearlyIncome, minimum_taxable, maximum_taxable, discount):
     taxAmount = 0
     # for less than 4 lakhs
@@ -50,6 +50,4 @@ if __name__=='__main__':
           print("Unmarried below 7 lakhs",taxForMaritalStatus(546000, 400000, 2000000, 0)) # 23200 ==> below 7 lakhs
           print("Unmarried below 20 lakhs",taxForMaritalStatus(1546000, 400000, 2000000, 0)) # 307800 ==> below 20 lakhs
           print("Unmarried above 20 lakhs",taxForMaritalStatus(11546000, 400000, 2000000, 0)) # 3880560 ==> above 20 lakhs
-          # print(taxAmount)
-          # taxForWomen(taxAmount)
 
