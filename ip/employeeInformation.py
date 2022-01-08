@@ -1,17 +1,30 @@
 import calculateTax
+import calculateDiscountRate
 
 # backend for maritial status checking
-def checkStatus(isMarried, isInsurance, isDisability, isDiplomat, yearlyIncome):
+def checkStatus(isMarried, gender, isInsurance, isDisability, isDiplomat, yearlyIncome):
           if isMarried.upper() == "Y":
-                    minimum_taxable = float(input("Enter the minimum taxable amount::"))
-                    maximum_taxable = float(input("Enter the maximum taxable amount::"))
-                    return calculateTax.taxForMarried(yearlyIncome, minimum_taxable, maximum_taxable)
+                    # minimum_taxable = float(input("Enter the minimum taxable amount::"))
+                    # maximum_taxable = float(input("Enter the maximum taxable amount::"))
+                    minimum_taxable = 450000
+                    maximum_taxable = 2000000
+                    discount = calculateDiscountRate.calculateDiscountRate(gender, isDisability, isDiplomat)
+                    return calculateTax.taxForMaritalStatus(yearlyIncome, minimum_taxable, maximum_taxable, discount)
           elif isMarried.upper() == "N":
-                    minimum_taxable = float(input("Enter the minimum taxable amount::"))
-                    maximum_taxable = float(input("Enter the maximum taxable amount::"))
-                    return calculateTax.taxForUnmarried(yearlyIncome, minimum_taxable, maximum_taxable)
+                    # minimum_taxable = float(input("Enter the minimum taxable amount::"))
+                    # maximum_taxable = float(input("Enter the maximum taxable amount::"))
+                    minimum_taxable = 400000
+                    maximum_taxable = 2000000
+                    discount = calculateDiscountRate.calculateDiscountRate(gender, isDisability, isDiplomat)
+                    return calculateTax.taxForMaritalStatus(yearlyIncome, minimum_taxable, maximum_taxable, discount)
+                    # print(discount)
           else:
                     print("Oops! Something went wrong.\nThank you for using our service!!!\nSee you next time")
+          
+          # if isDisability.upper() == "Y" and is:
+          #           minimum_taxable = float(input("Enter the minimum taxable amount::"))
+          #           maximum_taxable = float(input("Enter the maximum taxable amount::"))
+          #           return calculateTax.taxForMarried
           
 
 
@@ -40,13 +53,13 @@ def employeeInfo(numberOfUsers):
                     isDiplomatList.append(isDiplomat)
                     yearlyIncome = float(input("Customer[{}]:: Enter your yearly income:: ".format(i+1)))
                     yearlyIncomeList.append(yearlyIncome)
-                    taxAmount = checkStatus(isMarried, isInsurance isDisability, isDiplomat, yearlyIncome)
+                    taxAmount = checkStatus(isMarried, gender, isInsurance, isDisability, isDiplomat, yearlyIncome)
                     taxAmountList.append(taxAmount)
 
 
 def displayInfoWithResult(numberOfUsers):
           for i in range(numberOfUsers):
-                    print("For Customer[{}]\nCustomer Name::", yournameList[i], "Address::", addressList[i],"Contact::", contactList[i],"Age::",ageList[i],"Gender::",genderList[i],"Current Date of Registration::",currentDORList[i],"Marital Status::",isMarriedList[i],"Insurance::", isInsuranceList[i],"Disability::",isDisabilityList[i],"Diplomat::",isDiplomatList,"Yearly Income::", yearlyIncomeList[i],"Taxable Amount::",taxAmountList[i],"\nThis is computer generated tax amount to be paid.\n".format(i))
+                    print("For Customer[{}]\nCustomer Name::", yournameList[i], "\tAddress::", addressList[i],"\tContact::", contactList[i],"\nAge::",ageList[i],"\tGender::",genderList[i],"\tCurrent Date of Registration::",currentDORList[i],"\nMarital Status::",isMarriedList[i],"\tInsurance::", isInsuranceList[i],"\tDisability::",isDisabilityList[i],"\nDiplomat::",isDiplomatList[i],"\tYearly Income::", yearlyIncomeList[i],"\tTaxable Amount::",taxAmountList[i],"\n\nThis is computer generated tax amount to be paid.\n".format(i))
 
                     
 
@@ -67,12 +80,19 @@ isDiplomatList = []
 yearlyIncomeList = []
 taxAmountList = []
 
-
+# get the number of user for the system to calculate the tax amount
+# numberOfUsers = int(input("Enter the number of users::"))
+# print("Enter the details of", numberOfUsers, "users::")
+# call above function here
+# employeeInfo(numberOfUsers)
+# displayInfoWithResult(numberOfUsers)
 
 if __name__ == '__main__':
+          pass
           # get the number of user for the system to calculate the tax amount
-          numberOfUsers = int(input("Enter the number of users::"))
-          print("Enter the details of", numberOfUsers, "users::")
+          # numberOfUsers = int(input("Enter the number of users::"))
+          # print("Enter the details of", numberOfUsers, "users::")
           # call above function here
-          employeeInfo(numberOfUsers)
-          displayInfoWithResult(numberOfUsers)
+          # employeeInfo(numberOfUsers)
+          # displayInfoWithResult(numberOfUsers)
+          checkStatus("N", "F", "N", "N", "N", 115460000)
