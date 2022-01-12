@@ -5,5 +5,5 @@ def getFooter():
           '''
 )
 
-if __name__ == '__main__':
-          getFooter()
+# if __name__ == '__main__':
+#           getFooter()

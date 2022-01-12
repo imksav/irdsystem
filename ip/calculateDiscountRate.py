@@ -11,7 +11,8 @@ def calculateDiscountRate(gender, isDisability, isDiplomat):
                     discountGender = 0.1
           else:
                     discountGender = 0
-          return compareDiscount(discountDiplomat, discountDisability, discountGender)
+          # return compareDiscount(discountDiplomat, discountDisability, discountGender)
+          return addAllDiscount(discountDiplomat, discountDisability, discountGender)
 
 
 def compareDiscount(discountDiplomat, discountDisability, discountGender):
@@ -25,6 +26,9 @@ def compareDiscount(discountDiplomat, discountDisability, discountGender):
                     discount = 0
           return discount
 
+def addAllDiscount(discountDiplomat, discountDisability, discountGender):
+          discount = discountDiplomat + discountDisability + discountGender
+          return discount
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
           # print(calculateDiscountRate("M", "N", "N"))

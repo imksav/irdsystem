@@ -1,7 +1,7 @@
 import calculateTax
 import calculateDiscountRate
 
-def checkStatus(isMarried, gender, isInsurance, isDisability, isDiplomat, yearlyIncome):
+def checkStatus(isMarried, gender, insuranceAmount, isDisability, isDiplomat, yearlyIncome):
           if isMarried.upper() == "Y":
                     # minimum_taxable = float(input("Enter the minimum taxable amount::"))
                     # maximum_taxable = float(input("Enter the maximum taxable amount::"))
@@ -38,21 +38,21 @@ def employeeInfo(numberOfUsers):
                     currentDORList.append(currentDOR)
                     isMarried = input("Customer[{}]:: Are you married?(Y/N)::")
                     isMarriedList.append(isMarried)
-                    isInsurance = input("Customer[{}]:: Did you insurance?(Y/N)::".format(i+1))
-                    isInsuranceList.append(isInsurance)
+                    insuranceAmount = float(input("Customer[{}]:: Enter your insurance amount::".format(i+1)))
+                    insuranceAmountList.append(insuranceAmount)
                     isDisability = input("Customer[{}]:: Do you have any disability?(Y/N)::".format(i+1))
                     isDisabilityList.append(isDisability)
                     isDiplomat = input("Customer[{}]:: Do you have diplomat job?(Y/N)::".format(i+1))
                     isDiplomatList.append(isDiplomat)
                     yearlyIncome = float(input("Customer[{}]:: Enter your yearly income:: ".format(i+1)))
-                    yearlyIncomeList.append(yearlyIncome)
-                    taxAmount = checkStatus(isMarried, gender, isInsurance, isDisability, isDiplomat, yearlyIncome)
+                    yearlyIncomeList.append(yearlyIncome-insuranceAmount)
+                    taxAmount = checkStatus(isMarried, gender, insuranceAmount, isDisability, isDiplomat, yearlyIncome)
                     taxAmountList.append(taxAmount)
 
 # display output
 def displayInfoWithResult(numberOfUsers):
           for i in range(numberOfUsers):
-                    print("For Customer[{}]\nCustomer Name::", yournameList[i], "\tAddress::", addressList[i],"\tContact::", contactList[i],"\nAge::",ageList[i],"\tGender::",genderList[i],"\tCurrent Date of Registration::",currentDORList[i],"\nMarital Status::",isMarriedList[i],"\tInsurance::", isInsuranceList[i],"\tDisability::",isDisabilityList[i],"\nDiplomat::",isDiplomatList[i],"\tYearly Income::", yearlyIncomeList[i],"\tTaxable Amount::",taxAmountList[i],"\n\nThis is computer generated tax amount to be paid.\n".format(i))
+                    print("For Customer[{}]\nCustomer Name::", yournameList[i], "\tAddress::", addressList[i],"\tContact::", contactList[i],"\nAge::",ageList[i],"\tGender::",genderList[i],"\tCurrent Date of Registration::",currentDORList[i],"\nMarital Status::",isMarriedList[i],"\tInsurance::", insuranceAmountList[i],"\tDisability::",isDisabilityList[i],"\nDiplomat::",isDiplomatList[i],"\tYearly Income::", yearlyIncomeList[i],"\tTaxable Amount::",taxAmountList[i],"\n\nThis is computer generated tax amount to be paid.\n".format(i))
 
                     
 # initalize the variable
@@ -63,13 +63,14 @@ ageList = []
 genderList = []
 currentDORList = []
 isMarriedList = []
-isInsuranceList = []
+insuranceAmountList = []
 isDisabilityList = []
 isDiplomatList = []
 yearlyIncomeList = []
 taxAmountList = []
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
+
           # numberOfUsers = int(input("Enter the number of users::"))
           # print("Enter the details of", numberOfUsers, "users::")
           # employeeInfo(numberOfUsers)
